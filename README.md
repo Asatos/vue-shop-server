@@ -1,4 +1,13 @@
-#### 项目整体文件说明
+# Vue 电商后台管理系统后台 API 接口服务器
+
+## 技术栈
+
+- Node.js
+- Express
+- MySQL
+
+## 项目整体文件说明
+
 - `config` 配置文件目录
   - `default.json` 默认配置文件（其中包含数据库配置，jwt配置）
 - `dao` 数据访问层，存放对数据库的增删改查操作
@@ -17,3 +26,10 @@
 - `services` 服务层，业务逻辑代码在这一层编写，通过不同的接口获取的数据转换成统一的前端所需要的数据
 - `app.js` 主项目入口文件
 - `package.json` 项目配置文件
+
+## Develop
+
+```shell
+npm install
+npm start
+```

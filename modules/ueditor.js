@@ -31,7 +31,6 @@ module.exports = function(req,res,next) {
 				} else {
 
 					res.redirect(upload_config.get("simple_upload_redirect") + "?result=" + JSON.stringify(result));
-					// res.redirect(result.url);
 				}
 				
 			});

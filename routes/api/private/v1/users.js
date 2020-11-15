@@ -119,7 +119,6 @@ router.delete("/:id",
 	function(req,res,next){
 		if(!req.params.id) return res.sendResult(null,400,"用户ID不能为空");
 		if(isNaN(parseInt(req.params.id))) return res.sendResult(null,400,"ID必须是数字");
-		if(req.params.id == 500) return res.sendResult(null,400,"不允许删除admin账户");
 		next();
 	},
 	// 处理业务逻辑
@@ -139,8 +138,6 @@ router.put("/:id/role",
 			return res.sendResult(null,400,"用户ID不能为空");
 		}
 		if(isNaN(parseInt(req.params.id))) return res.sendResult(null,400,"用户ID必须是数字");
-
-		if(req.params.id == 500) return res.sendResult(null,400,"不允许修改admin账户");
 
 		if(!req.body.rid) res.sendResult(null,400,"权限ID不能为空"); 
 		next();

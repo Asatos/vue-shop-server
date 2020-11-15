@@ -10,7 +10,7 @@ global.service_auth_fn = null;
 
 /**
  * 构造回调对象格式
- * 
+ *
  * @param {[type]} serviceName   服务名称
  * @param {[type]} actionName    动作名称（方法名）
  * @param {[type]} serviceModule 服务模块
@@ -25,11 +25,11 @@ function Invocation(serviceName,actionName,serviceModule,origFunc) {
 					if(pass) {
 						origFunc.apply(serviceModule,origArguments);
 					} else {
-						res.sendResult(null,401,"权限验证失败");
+						res.sendResult(null,403,"权限验证失败");
 					}
 				});
 			} else {
-				res.sendResult(null,401,"权限验证失败");
+				res.sendResult(null,403,"权限验证失败");
 			}
 		}
 	}
@@ -43,7 +43,7 @@ module.exports.getService = function(serviceName) {
 	}
 
 	var servicePath = path.join(process.cwd(),"services",serviceName);
-	
+
 	var serviceModule = require(servicePath);
 	if(!serviceModule) {
 		console.log("模块没有被发现");
